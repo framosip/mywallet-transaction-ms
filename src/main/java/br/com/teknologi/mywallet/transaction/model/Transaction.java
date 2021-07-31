@@ -1,9 +1,7 @@
 package br.com.teknologi.mywallet.transaction.model;
 
-import br.com.teknologi.mywallet.transaction.dto.request.TransactionRequest;
 import br.com.teknologi.mywallet.transaction.enums.TransactionTypeEnum;
 import lombok.*;
-import org.modelmapper.ModelMapper;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -34,9 +32,5 @@ public class Transaction {
 
     @Setter(onMethod = @__(@Deprecated))
     private LocalDate date = LocalDate.now();
-
-    public static Transaction fromRequest(ModelMapper mapper, TransactionRequest request) {
-        return mapper.map(request, Transaction.class);
-    }
 
 }
